@@ -1,0 +1,19 @@
+{
+    "class": "orc",
+    "PV": 40,
+    "PA": 0,
+
+    "AT": 8,
+    "PRD": 10,
+    "PI": 2,
+    "PR": 3,
+
+    "description":[
+        "Classe généralement réservée aux monstres, moins fort en attaque,", 
+        "et physiquement repoussant, mais résistant aux dégâts (peut ",
+        "s'apparenter à un tank: encaisse beaucoup d'attaques à la place du",
+        " mage, par exemple).\nLes orcs sont particulièrement réfractaire à ",
+        "la magie."
+    ]     
+
+}

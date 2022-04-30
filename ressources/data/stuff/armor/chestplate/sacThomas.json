@@ -1,0 +1,20 @@
+{
+    "name": "Sac \u00e0 dos de cours",
+    "protection": 1,
+    "effet": {
+        "INT": 10,
+        "PV": 3,
+        "PA": 3,
+        "PR": 1,
+        "FO": 2
+    },
+    "tooltip": "Un objet magique qui peut contenir tout et n'importe quoi, \u00e0 tout moment\n",
+    "prix": 20.0,
+    "slot": "plastron",
+    "usable": {
+        "mage": true,
+        "chevalier": false,
+        "sorciere": true,
+        "orc": false
+    }
+}

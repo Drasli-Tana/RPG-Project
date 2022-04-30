@@ -1,0 +1,16 @@
+{
+    "name": "Plastron en fer",
+    "protection": 2,
+    "effet": {
+        "AD": -1
+    },
+    "tooltip": "Un plastron en fer de base\n",
+    "prix": 6.0,
+    "slot": "plastron",
+    "usable": {
+        "mage": false,
+        "chevalier": true,
+        "sorciere": false,
+        "orc": false
+    }
+}

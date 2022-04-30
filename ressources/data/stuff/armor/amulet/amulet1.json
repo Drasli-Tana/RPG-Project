@@ -1,0 +1,17 @@
+{
+    "name": "Amulette du retournage de verbe",
+    "protection": 0,
+    "effet": {
+        "INT": -2,
+        "COU": 2
+    },
+    "tooltip": "Le porteur parle \u00e0 l'envers.\nC'est tr\u00e8s dr\u00f4le de le voir s'\u00e9nerver sans comprendre.\n",
+    "prix": 2.0,
+    "slot": "amulette",
+    "usable": {
+        "mage": true,
+        "chevalier": true,
+        "sorciere": true,
+        "orc": true
+    }
+}

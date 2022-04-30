@@ -1,0 +1,31 @@
+Choses à finir pour la version RPG 0.3:
+
+ - commencer la fenêtre d'achat pour l'armurerie (Hamza)
+   # sera mis en place pour la version 0.3.0
+
+ - généraliser la méthode switch (Hamza)
+   # sera mis en place pour la version 0.3.x?
+
+Choses à finir pour la nouvelle version RPG 0.2:
+
+ - continuer Affichage_graphique (Hamza)   En cours
+    -> pouvoir acheter une place de l'inventaire
+    -> pouvoir équiper un objet (test avec une épée)
+
+ - ajouter les stats pour le joueur (Thomas)  En cours
+
+ - ajout de l'équipement (Thomas) 
+   # Urgent (pour au moins une épée en bois pour test)
+
+ - Un installateur des modules requis  (Thomas)  pas prioritaire pour l'instant
+    -> Téléchargement des modules pygames et pyscroll + pytmx via pip
+    -> Peut-être un script de désinstalltation aussi
+        -> Un utilisateur peut avoir installé de son côté pygame,
+            donc il ne faut pas y toucher dans ce cas
+
+        -> Éviter de polluer l'ordi de l'utilisateur avec des modules
+            qui ne lui serviront à rien si jeu non utilisé
+            (N'est-ce pas, Microsoft? Cortana, InternetExplorer, les dll...)
+
+
+

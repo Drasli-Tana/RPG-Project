@@ -1,0 +1,6 @@
+Listes des modules pour RPG game
+
+- pygame    pip install pygame     |création de la fenêtre
+- pytmx     pip install pytmx      |pour lire les formats de la map en tmx
+- pyscroll  pip install pyscroll   |sert à gérer le zoom et se faciliter la vie
+- import pathlib    fournit avec python +3.0   --> permet de trouver le chemin du fichier

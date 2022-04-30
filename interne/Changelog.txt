@@ -1,0 +1,290 @@
+RPG Projet:
+Tags pour bien les distinguer:
+    %Buggué% >> Fonctionnalité ajoutée, mais qui présente quelques problèmes,
+                N'indique pas le niveau.
+    #module# >> Fait référence à un module, une fonction ou une méthode
+    <Touche> >> Fait référence à un raccourci clavier ou une touche, généralement
+                pour signaler un problème.
+    $var$    >> Référence à une variable, pour les attributs, notamment, indique
+                un changement potentiellement important pour le(s) dev(s)
+
+
+Version 0.3.1
+Date: 42/08/2021
+- Classe Shop:
+    -> Mise en place d'une structure permettant d'acheter (et, à terme, de
+        vendre) les items du joueur
+    
+    -> Les items, c'est à dire leur nom et le chemin du fichier
+        correspondant, sont stockés dans un fichier $items.json$
+        -> Accélération de l'ouverture de la boutique, et le fichier peut
+            être utilisé ailleurs.
+    
+    -> Changement de barre de titre: il est impossible de minimiser la
+        fenêtre
+        -> Prochain ajout: La fenêtre doit rester au premier plan 
+            (actuellement elle disparait si on sélectionne autre chose)
+
+    -> Début de système de vente:
+        -> Prix: 1/2 valeur d'achat
+        -> Alternance via interrupteur
+        -> %Buggé%: Lors de la vente, les items "vendables" sont réactualisés,
+            -> Ralentit la vente de plusieurs objets
+
+- Classe Logger:
+    -> Ajout d'un système de logs 
+        -> Affiche un texte "formaté" dans la console
+        -> %Buggué% écrit dans un fichier externe au même format
+            -> Une correction nécessite de "sérialiser" les écritures
+                au fichier 
+
+- Classe Music:
+    -> Possibilité de jouer de la musique tout au long de la partie
+        -> Usage spécifique, pour les bruitages, utiliser les méthodes
+            dédiées de #pygame#
+
+- Classe Game:
+    -> Correction de la maison
+    -> Ajout d'une forêt
+        -> Gestion des collisions
+        -> Comporte un Groot
+        -> Comporte une cabane (possibilité d'ajouter rapidement une
+            map/quete
+        -> Si le joueur emprunte l'un des chemins à gauche ou à droite,
+            il sera téléporté de l'autre côté
+
+- Classe Combat:
+    -> Pas de changement, mais début d'implémentation (voir classe
+        Affichage_graphique)
+        -> Possibilité de choisir une cible, et de l'attaquer
+
+    -> Les logs ne conservent que le dernier tour de jeu.
+        
+- Classe Affichage_Graphique:
+    -> Général:
+        -> Utilisation d'une police personnalisée
+        
+    -> Inventaire:
+        -> Les images, et le contenu se mettent à jour dynamiquement
+        -> Simplification, et optimisation, de l'affichage des images
+        -> Une image inexistante/non trouvée ne fait plus planter l'inventaire
+            -> Ajout d'une texture par défaut
+        -> Chaque objet possède un attribut $count$, si celui-ci tombe à 0,
+            l'image est retirée de l'inventaire
+            -> Mise à jour des images lors d'une vente
+            -> Possibilité d'acheter plusieurs fois un objet
+- Divers:
+    -> Allègement du dossier
+        -> Suppression de fichier d'images non utilisées ($spritesheet.png$
+            notamment)
+        
+Version 0.2.9
+Date: 06/07/2021
+
+- Tiled (tmx)
+    -> ajout d'une maison # beug un peu mais j'y peut rien pour le moment
+
+- Un peu partout, surtout Affichage_graphique:
+    -> Ajout d'une variable partagée
+        -> rend obsolète le fichier texte
+    -> Corrections mineures
+    -> L'or est désormais un flottant
+
+ - Classe Game:
+    -> Gestion de la touche d'inventaire (E)
+        -> Ne s'ouvre qu'au relâchement de la touche
+        -> Rappuyer sur la touche dans la fenêtre principale ferme l'inventaire
+
+    -> Le clicker de combat ne s'ouvre plus par défaut
+        -> Il faut maintenant appuyer sur "C"
+
+    -> À la fermeture de la fenêtre principale, les sous-processus sont fermés
+        aussi
+
+ - Classe Affichage_graphique:
+    -> Le constructeur prend en paramètre optionnel une largeur de fenêtre
+        -> Permet un redimensionnement rapide
+
+ - Classe Player:
+    -> Inutile: on peut récupérer la classe du personnage ("mage", ...)
+
+
+Version 0.2.8:
+Date: 04/07/2021
+
+    - classe Affichage_graphique    v1.0
+	-> affiche l'inventaire sous forme graphique (croix)
+	-> intégration des slots (cases de l'inventaire)
+
+Version 0.2.7:   Elle est passé où la version 0.2.6 ? # Elle est pas sortie
+Date: 03/07/2021
+
+    - nouvelle classe Affichage_graphique    v0.4
+	# devrait gérer l'affichage de l'inventaire
+	-> créer une fenêtre inventaire
+	-> gert le texte et les images 
+	-> affichage de l'or du joueur
+	-> intégration d'un ratio pour pouvoir changer la taille de fenêtre
+	   tout en tenant compte des images et du texte
+
+    - Ressources
+	-> j'ai modifié l'image du mage pour que les yeux ne soit pas transparent
+	   (cette nouvelle version s'appelle mage_2 au cas où tu préfère la 1)
+ 	-> changé le sol de la taverne (il faisait mal au yeux lors de déplacement)
+
+    - Classe Game:
+	-> gert le cas où aucune touche n'est appuyé
+
+    - Classe Player:
+	- Ajout de la méthode move_stop()
+	   -> permet au personnage de s'arrêter avec les pieds au sol
+	   -> Modification de la méthode change_animation et animation_deplacement
+	   -> ajout de l'attribut old_direction (oui il désigne la dernière direction)
+	  
+    - Classe Inventaire:
+        - Ajout d'un emplacement pour un plastron
+            -> Le personnage peut avoir deux anneaux, une amulette,
+                un pantalon, un casque, deux objets, un sac, etc.
+                mais il se balade torse nu... Contre des monstres...
+
+
+Version 0.2.5
+Date: +- 2/07/2021
+ - classe Player:
+    - implémentation des stats
+        -> Utilisation du fichier json
+        -> Tirage aléatoire de 4 caractéristiques
+        -> Les valeurs ne sont pour l'instant pas utilisées
+
+ - Interne:
+    - Ajout d'une doc pour Hamza
+
+Version: 0.2.4
+Date: +- 2/07/2021 
+
+Description générale: ajout d'éléments graphiques dont nouvelles maps
+
+- Tiled (dossier tmx)
+    -> ajout de batiments (une taverne et une armurerie)
+    -> ajout de collisions et point de spawn pour gérer entrée / sortie
+       d'un batiment
+    -> ajout d'une nouvelle map "armurerie" pour pouvoir rentrer dedans
+    -> ajout d'une nouvelle map "taverne"
+
+- classe Game:
+    -> gère les collisions pour entrer ou sortir de l'armurerie
+    -> gère les collisions pour entrer ou sortir de la taverne
+    -> ajout d'une methode switch_armurerie
+       # change la map actuelle en celle de l'armurerie
+    -> ajout d'une methode switch_accueil
+       # permet de retourner à la map de base
+    -> ajout d'une methode switch_taverne
+       # change la map actuelle en celle de taverne 
+
+
+Version: 0.2.3
+Date: +- 30/06/2021
+
+- En général
+    -> adoption de la structure de dossier que tu as proposé
+
+- Map accueil
+    -> ajout de rectangle de type collision sur certains objets
+       (l'eau, les rochers, les panneaux, le tronc des arbres)
+
+- classe Player
+    -> N'utilise plus la classe animation_sprite
+        # sinon trop complexe et inutile pour le moment puisqu'il n'y
+        # a pas de monstre
+    -> Amélioration du rectangle de personnage pour collision
+        # centré sur les pieds du personnage
+    -> Sauvegarde de la dernière position x et y pour les collisions
+	# ajout d'attibut old_position et de méthodes pour le gérer
+  
+- classe Game
+    -> Gère les collisions entre le joueur et les objets
+	# self.walls contient l'emplacement des objets de collisions
+	  (modifiable sur tiled, donc si tu peux l'installer ça serait bien)
+    -> Ajout d'une méthode update pour prendre en compte les collisions
+	# S'il y a collision, le personnage retourne à son ancienne position
+
+
+Version: 0.2.2
+Date: +- 28/06/2021
+- Interne:
+    Changement des noms de fichier de classes
+        -> codes/class_game devient code/Game
+        -> Un fichier porte généralement le même nom que la classe
+                qu'il contient
+
+    Pourquoi tu t'embêtes à utiliser le module pathlib?
+        -> le module os peut faire ça très facilement, et est intégré
+                d'office à python (version à vérifier)
+        -> os.getcwd(): renvoie le chemin du code exécuté
+
+    Éviter les accents dans les noms de fichier:
+        -> Ne devrait pas poser de problème, mais avec windows,
+                on sait jamais
+        -> Renommage de "sorcière.png" en "sorciere.png"
+            -> Dans un jeu de rôle, il y a pas la distinction
+                    mage/sorcière, mais bon, tant pis
+
+    On appelle le fichier des mises à jour "Changelog" plutôt que
+        "état des versions du jeu"
+        -> C'est plus parlant, pour la plupart des devs
+
+        -> Idem pour les choses à faire, ce serait plutôt "TODO", au lieu de
+            "choses à faire"
+
+    Déplacement du répertoire "images" dans le dossier "resources"
+        -> Évite de tout mettre à la racine
+            -> On pourra déplacer le dossier tmx
+                -> À voir si tu veux le faire
+
+            -> Permet de différencier le code des ressources
+                (images, compétences, ...)
+
+        -> Ajout d'un dossier "data", pour stocker les fichiers "*.json"
+            -> cf. "- Classe Player"
+
+    Éventuellement créer un dossier dédié aux fichiers internes
+        (changelog et TODO, par ex.)
+
+    Essaye de faire des changelogs précis:
+        -> "Affichage du personnage"
+            -> Ajout du déplacement
+                -> Met à jour l'image du joueur
+                -> Possibilité de déplacement dans les 4 directions
+                -> vitesse modifiable
+
+
+- Classe "Player":
+    - Ajout d'une méthode pour changer la vitesse de déplacement
+        -> Pourra être modifiée et utilisée pour l'équipement
+        -> Ajout d'un fichier de stats regroupant chaque classe
+            -> Fichier "*.json", utilisable en python par défaut (module json)
+            # J'aurais aussi pu utiliser un fichier csv, mais là, je lis
+            #    (et toi aussi tu peux lire) directement sous forme de
+            #    dictionnaire
+
+            -> Usage des noms définis par toi, donc si tu changes "chevalier"
+                en "guerrier", tu te débrouilles à changer les clefs du dico
+                en conséquence
+
+Version 0.2.0
+Date: +- 27/06/2021
+
+- Classe Animation_sprite
+    -> Animation des personnage: utilise plusieurs frame
+        -> Un peu du bricolage, on fera avec, si ça marche
+
+
+Version: 0.1.0
+Date: 26/06/2021
+
+- affichage d'une map basique
+
+- affichage du personnage
+
+- possibilité de faire déplacer le personnage
+    -> (haut, bas, droite, gauche)

@@ -1,0 +1,103 @@
+Bon, comme t'as jamais vraiment joué à un JDR, je te fais une doc
+un minimum lisible
+
+D'abord, les bases:
+
+La plupart des actions sont soumises à un jet de dés, généralement
+à 20 faces (abrégé D20, qui désigne le jet de dé).Les dégâts
+infligé impliquent deux types de valeurs: une part fixe et une part
+variable, déterminée par un jet de dé à 6 faces (D6, ou D tout
+court), opération qui doit être faite à CHAQUE attaque réussie.
+
+Une épreuve réussie signifie que le résultat du D20 est inférieur
+ou égal au score de la caractéristique testée (Le moins est le
+mieux). Cette caractéristique, et donc par extension, le succès
+ou non du test, peut-être modifiée temporairement. Il est par
+exemple difficile de réfléchir sous une pluie de flèche, le joueur
+subira par conséquent un malus au jet, pour prendre la décision de
+s'enfuir, ou autre. Il existe toutefois une exception à la réussite
+du test: si le résultat vaut 20, c'est automatiquement un échec, et
+même un critique. Dans ce cas, il faudra se reporter au tableau que
+je ferai un jour, et qui se retournera certainement contre le joueur.
+Bien évidemment, à l'inverse, un 1 signifiera une réussite critique,
+ou "Coup du maître", et apportera un bonus ponctuel à celui-ci. À 
+titre d'illustration, un résultat de 1 sur une attaque, suivie d'un
+19 ou 20 pour choisir l'effet du coup critique, permet de tuer
+instantanément l'ennemi. 
+
+Les caractéristiques, en réalité, sont nombreuses, mais, pour éviter
+des complications tant pour le développeur que pour le joueur, on se
+limitera à celles ci:
+    - Attaque (AT): les chances de réussir une attaque (sur 20)
+    - Parade (PRD): ---------------------- une parade
+    
+    - Points de Vie (PV): si ceux-ci tombent à 0,le personnage meurt
+            (on pourra autoriser une résurection, sous certaines
+            conditions)
+    - Points Astraux (PA): réservés aux mages (0 pour les autres),
+            semblable au mana, que tu connais.
+    
+    - Points d'Impact (PI): Les dégâts de base infligés, à mains
+            nues. Ce score est modifié, entre autres, par la
+            force du personnage.
+    
+    - Protection (PR): La protection naturelle du personnage (en
+            réalité, cette caractéristique vaut normalement 0 pour
+            toutes les classes, et on fournit une armure légère dès
+            le début, mais on va s'autoriser quelques libertés. Elle
+            est notamment modifiée par l'armure portée, y compris le
+            bouclier lorsqu'il sera ajouté.
+
+    - Courage (COU): Le courage du personnage, c'est à dire les
+            chances de ne pas avoir peur (non, non, je ne rigole pas,
+            il existe réellement une telle compétence: "Faire peur"
+            ou équivalent). De plus, il représente la position du
+            joueur dans l'ordre d'attaque: les personnages avec un
+            haut score de courage attaqueront en premier
+    
+    - Adresse (AD): l'intérêt principal de cette caractéristique est
+            l'esquive. Cependant, un personnage qui esquive ne pourra
+            pas attaquer au tour suivant, il est donc parfois plus
+            intéressant de parer que d'esquiver. 
+
+    - Force (FO): Bon, je commence à manquer d'inspiration pour
+            écrire mes paragraphes. De manière simple, cette
+            caractéristique augmente les dégâts de 1 par point au
+            dessus de 13 (grosso modo, on tire au début un score, à
+            savoir 1D6 + 7. À certains passages de niveau, il est
+            possible de l'augmenter d'un maximum d'un point à la
+            fois, et on ajoute k PI avec k = FO - 13 si k est
+            positif). 
+
+    - Intelligence (INT): Pour les mages, elle augmente les PA. Pour 
+            les autres, elle ne sert qu'au MJ (Maître du Jeu) pour
+            embêter les joueurs, ou les aider.
+
+Toutes les classes (personnages) ne devraient pas pouvoir accéder à
+tous les items. Par exemple, un mage ne peut pas se balader en armure
+intégrale ou un orc ne peut pas utiliser d'objets magiques.
+
+Prendre un niveau dépend de certaines conditions et permet un nombre
+limité d'actions. Tout d'abord, la quantité d'XP du joueur doit
+atteindre ou dépasser le palier suivant (Un+1 = Un + n * 100, avec
+U0 = 100). Comme les points d'expérience sont distribués hors combat,
+il n'y a pas de gros changements durant celui-ci. Ensuite, Pour 
+chaque niveau, le joueur choisit de gagner 1D6 PV max (ou PA, pour
+les mages). Puis, si le niveau est pair, le joueur augmente son score
+d'attaque OU de parade (pas les deux en même temps) d'un point à la
+fois. Si le niveau est impair, le joueur gagne un point dans une, et
+une seule de ces caractéristiques: force, adresse, courage ou 
+intelligence (ici encore, un seul point à la fois). Enfin, pour les
+niveaux multiples de 3, le personnage gagne une compétence
+supplémentaire (quand ça sera implémenté)
+
+Durant l'exploration, le joueur pourra fouiller là où il se trouve,
+notamment dans un donjon, à la recherche d'or ou d'items. Il peut
+être intéressant d'ajouter des pièges, et de tester l'adresse du
+personnage pour l'éviter. La fouille ne devrait pas être sans
+danger, a fortiori dans les lieux gardés, par exemple dans la taverne
+ou à l'armurerie.
+
+C'est à peu près tout ce qui me vient en tête, si tu as des questions,
+demandes moi, je modifierai ce fichier qui peut te servir de notes. 
+

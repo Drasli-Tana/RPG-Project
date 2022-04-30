@@ -1,0 +1,10 @@
+{
+    "Amulette du retournage de verbe": "ressources/data/stuff/armor/amulet/amulet1.json",
+    "Ceinture de base": "ressources/data/stuff/armor/belt/belt1.json",
+    "Bottes en fer": "ressources/data/stuff/armor/boot/ironBoots.json",
+    "Plastron en fer": "ressources/data/stuff/armor/chestplate/ironChestplate.json",
+    "Robe de mage": "ressources/data/stuff/armor/chestplate/robes1.json",
+    "Sac \u00e0 dos de cours": "ressources/data/stuff/armor/chestplate/sacThomas.json",
+    "Lunettes de lecture": "ressources/data/stuff/armor/helmet/readingGlasses.json",
+    "Epee en fer": "ressources/data/stuff/items/ironSword.json"
+}

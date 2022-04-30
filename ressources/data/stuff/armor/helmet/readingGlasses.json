@@ -1,0 +1,20 @@
+{
+    "name": "Lunettes de lecture",
+    "protection": 0,
+    "effet": {
+        "AD": 2,
+        "INT": 2,
+        "PA": 2,
+        "COU": -2,
+        "PV": 0
+    },
+    "tooltip": "Un item de test\n",
+    "prix": 1.0,
+    "slot": "casque",
+    "usable": {
+        "mage": true,
+        "chevalier": false,
+        "sorciere": true,
+        "orc": false
+    }
+}

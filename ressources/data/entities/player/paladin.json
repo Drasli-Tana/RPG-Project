@@ -1,0 +1,18 @@
+{
+    "class": "paladin",
+    "PV": 40,
+    "PA": 0,
+
+    "AT": 8,
+    "PRD": 10,
+    "PI": 2,
+    "PR": 3,
+
+    "description": [
+        "Le paladin est un personnage qui n'est ni très adroit, ni très fort, ni très doué",
+        " en combat, mais qui en contrepartie résiste très bien aux dégâts (certains récits",
+        " provenants de contrées éloignées semblent utiliser le terme de 'tank' pour les",
+        "désigner, mais cette information n'a jamais été confirmée"
+    ]        
+
+}

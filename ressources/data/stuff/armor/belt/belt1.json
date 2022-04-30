@@ -1,0 +1,14 @@
+{
+    "name": "Ceinture de base",
+    "protection": 0,
+    "effet": {},
+    "tooltip": "C'est vraiment n\u00e9cessaire?\n",
+    "prix": 0.5,
+    "slot": "ceinture",
+    "usable": {
+        "mage": true,
+        "chevalier": true,
+        "sorciere": true,
+        "orc": true
+    }
+}

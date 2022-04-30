@@ -1,0 +1,16 @@
+{
+    "class": "guerrier",
+    "PV": 30,
+    "PA": 0,
+    "AT": 9,
+    "PRD": 9,
+    "PI": 3,
+    "PR": 2,
+
+    "description": [
+        "Le guerrier est la classe polyvalente au combat par excellence: il n'est pas"
+        " particulièrement résistant aux dégâts mais il inflige d'assez gros dommages",
+        " Un guerrier ne peut pas lancer de sorts par lui-même, mais il est capable",
+        " d'utiliser des objets enchantés.\nEn résumé: bourrin mais pas trop."
+    ]
+}

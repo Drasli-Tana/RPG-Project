@@ -1,0 +1,17 @@
+{
+    "name": "Epee en fer",
+    "degats": [
+        1,
+        3
+    ],
+    "effet": {},
+    "tooltip": "Une \u00e9p\u00e9e en fer toute simple, de d\u00e9but de jeu\n",
+    "prix": 5.0,
+    "slot": "hand",
+    "usable": {
+        "mage": false,
+        "chevalier": true,
+        "sorciere": false,
+        "orc": false
+    }
+}

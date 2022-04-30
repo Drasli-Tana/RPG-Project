@@ -1,0 +1,17 @@
+{
+    "class": "mage",
+    "PV": 20,
+    "PA": 10,
+
+    "AT":  8,
+    "PRD": 10,
+
+    "PI": 1,
+    "PR": 1,
+
+    "description": [
+        "Classe généralement faible au corps-àcorps, mais capable d'utiliser",
+        "des sorts puissants.\nDificile à jouer au début, surtout seul,",
+        " mais s'avère être un allié précieux à relativement haut niveau."
+    ]
+}

@@ -1,0 +1,57 @@
+Histoire du jeu
+
+
+" ... " parole du narrateur
+
+Introduction: Lors de l'apparition du joueur
+
+" Bienvenue jeune aventurier !
+Nous sommes attaqués, vite choisi ton personnage et va défendre le village "
+
+" Tu as le choix entre un chevalier et un mage" (donnée la description)
+
+" Super tu es maintenant prêt au combat"
+
+" Pour te déplacer utilise les fléches et lance un combat contre un monstre
+en t'approchant de lui "
+
+" Bonne chance jeune aventurier ! " 
+
+
+
+Quête 1:
+
+- battre 3 monstres qui entourent le village
+possibilité de rajouter un chronomètre (10 min par exemple)
+
+Récompense quête 1:
+
+- 25 or
+- déblocage de la map 1 et de la quête 2
+
+Quête 2:
+
+" Maintenant que tu as sauvé le village il est temps de t'entrainer.
+Va dans la forêt chasser quelques animaux"
+
+- Tuer 2 sanglier et 2 serpents (générer de manière aléatoire)
+
+Récompense quête 2:
+
+- nourriture (soigne)
+- 50 xp 
+- déblocage quête 3 et possibilité de partir à l'aventure
+
+
+Quête 3:
+
+" Tu as acquis les bases, il est temps pour toi de voyager"
+" Va vers la montagne, une amie à été enlevé par une tribu de monstre "
+
+Récompense quête 3:
+
+- déblocage de la sorcière
+- 50 xp
+- 50 or
+- déblocage quête 4 et possibilité de s'entrainer dans la foret
+contre des monstres

@@ -1,0 +1,16 @@
+{
+    "name": "Robe de mage",
+    "protection": 1,
+    "effet": {
+        "PA": 2
+    },
+    "tooltip": "Une robe de mage basique\n\n",
+    "prix": 4.0,
+    "slot": "plastron",
+    "usable": {
+        "mage": true,
+        "chevalier": false,
+        "sorciere": true,
+        "orc": false
+    }
+}
