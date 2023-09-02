@@ -3,11 +3,11 @@
 # devrait gérer les combats et affichage de pnj
 
 import pygame
-from codes.Inventaire import*
+from codes.inventaire import *
 from codes.Combat import*
 import codes.Logger as CL
 from random import randint
-import codes.Player as CP
+import codes.player as CP
 
 class Affichage_graphique:
     colors = {
@@ -159,7 +159,7 @@ class Affichage_graphique:
             for i in range(self.row * self.column)]
             
         # pour gérer la limite d'inventaire
-        loop  = self.inventaire_player.inventaire["equipements"]["rien"]
+        loop  = len(self.inventaire_player.getBackpack())
         for i in range(loop):
             self.slots[i]["contenu"] = "Vide"
         # si un slot vaut None alors le joueur ne le possède pas
@@ -387,8 +387,8 @@ class Affichage_graphique:
         chemin = "ressources\\images\\inventaire\\"
         # contenu de l'inventaire ici les objets (que 1 objet pour l'instant)
         # chantier en cours
-        objets = self.inventaire_player.getInventory()
-        liste_objet = [i for i in objets if i != "rien"]
+        objets = self.inventaire_player.getBackpack()
+        liste_objet = [i for i in objets if i is not None]
         # Version simplifiée (et optimisée de ton code)
         # Oui, j'ai utilisé une boucle for, ça marche mieux, c'est fait pour
         # Et y'a pas besoin de bricolage pour faire -1 partout
@@ -406,8 +406,8 @@ class Affichage_graphique:
             self.slots[i]["image"] = image
             self.slots[i]["contenu"] = liste_objet[i]
         
-        for i in range(len(liste_objet),
-                       self.inventaire_player.getLimit()):
+        for i in range(
+            len(liste_objet), self.inventaire_player.getLimit()):
             self.slots[i]["image"] = "rien"
             self.slots[i]["contenu"] = "Vide"
     

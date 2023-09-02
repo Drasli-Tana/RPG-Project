@@ -7,10 +7,10 @@ import pygame
 import pyscroll  # nécessaire sinon trop galère
 import pytmx
 
-import codes.Inventaire as CI
+import codes.inventaire as CI
 import codes.Logger as CL
 import codes.Music as CM
-from codes.Player import *  # importation de la classe Player
+from codes.player import *  # importation de la classe Player
 import codes.Shop.Shop as SP
 import codes.Affichage_graphique as AG
 
@@ -50,15 +50,7 @@ class Game:
         
         else:
             raise TypeError("Missing parameter: images_item")
-        
-        
-        if "inventaire" in kwarg:
-            inventaire = kwarg.get("inventaire")
-        
-        else:
-            raise TypeError("Missing parameter: inventaire")
-        
-        
+    
         # j'améliorerai après
         
         with open("ressources/images/itemName.json") as file:
@@ -97,9 +89,8 @@ class Game:
         # génére le joueur et récupére la position de spawn dans la map
         player_position = tmx_data.get_object_by_name("spawn_player")
         
-        self.player = Player(player_position.x, player_position.y)
-        self.inventaire = CI.Inventaire(
-            self.player.getClass(), self.argent, inventaire)
+        self.player = Player(player_position.x, player_position.y, name="guerrier")
+        self.inventaire = CI.Inventaire(self.player.getClass(), self.argent)
         self.player.setInventaire(self.inventaire)
         
         # génére une liste de collision
@@ -566,6 +557,7 @@ class Game:
         for sprite in self.group.sprites():
             if sprite.feet.collidelist(self.walls) > -1:
                 sprite.move_back()
+
     
     def openWin(self, window = "inventory"):
         if window in self.subprocess.keys():

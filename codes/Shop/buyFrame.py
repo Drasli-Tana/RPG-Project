@@ -54,20 +54,20 @@ class BuyFrame(BF.BaseFrame):
         self.logger.log("Shop", f"Added {name} to inventory", 0)
         self.logger.log("Shop", "Current inventory:", 0)
         slots = [
-            i for i in self.inventaire.get_possessions().keys()
-            if i != "equipements"]
+            i for i in self.inventaire.getInventory().keys()
+            if i != "backpack"]
         
         for i in slots:
             self.logger.log(
                 "Shop", f"\t{i:16s}: " +
-                f"{self.inventaire.get_possessions()[i]}", 1)
+                f"{self.inventaire.getInventory()[i]}", 1)
         
         self.logger.log("Shop", "\tSac à dos:", 1)
         
-        for i in self.inventaire.get_possessions()["equipements"]:
+        for i in self.inventaire.getBackpack():
             self.logger.log(
                 "Shop", f"\t - {i}: " +
-                f"{self.inventaire.get_possessions()['equipements'][i]}", 1)
+                f"{self.inventaire.getBackpack()[i]}", 1)
         
     def get_bonus(self, name):
         # renvoie le bonus en stats de l'item

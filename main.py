@@ -3,14 +3,13 @@ import multiprocessing as MP
 import subprocess as SP
 import tkinter as Tk # si jamais on a besoin
 import importlib as IL
+import random as RD
+import json as JS
 import sys
-
 import os 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
 import pygame
-import random as RD
-import json as JS
 
 import codes.Logger as CL
 from codes.Game import Game
@@ -60,7 +59,6 @@ if __name__ == "__main__":
     argent = MP.Value('f', RD.randrange(1, 30))
     # gros bricolage en cours
     manager = MP.Manager()
-    inv = manager.dict()
     images_item = manager.dict()
     
     logger.log("Main", "Initializing main Process")
@@ -77,7 +75,6 @@ if __name__ == "__main__":
         target = fenetre_principale,
         kwargs = {
             "argent": argent,
-            "inventaire": inv,
             "images_item": images_item,
             "logger": logger
             })

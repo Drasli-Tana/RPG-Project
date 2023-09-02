@@ -37,6 +37,8 @@ class SellFrame(BF.BaseFrame):
             self.updateOpt()
             
     def updateOpt(self):
-        items = self.inventaire.getInventory().values()
-        self.changeOpts([item["name"] for item in items])
+        items = list(self.inventaire.getBackpack().values())
+        self.changeOpts(
+            [item["name"] for item in items]
+            )
                 

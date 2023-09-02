@@ -1,0 +1,10 @@
+{
+    "class": "apothicaire",
+    "PV": 20,
+    "PA": 20,
+    "AT": 7,
+    "PRD": 11,
+    "PI": 1,
+    "PR":1,
+    "description": "Les apothicaire sont des gens assez cultivés, capable d'aider leurs alliés au combat. Leur tâche habituelle consiste à soigner leurs équipiers, mais il sont également aptes à augmenter leurs compétences au combat, ou encore d'affaiblir leurs adversaires en utilisant diverses potions, généralement fabriquées par eux-mêmes. Ils maitrisent souvent un ou deux sorts de soin, pour pallier les problèmes pouvant survenir lorsque les potions sont épuisées."
+}
